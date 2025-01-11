@@ -57,7 +57,7 @@ Contributions are welcome! If you'd like to improve this project, please fork th
 5. Push your changes to your forked repository
 6. Submit a pull request to the original repository
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/MegumiKatou02/authenticator-extension/blob/main/LICENSE) file for details
 
 ## Acknowledgments
 - TOTP algorithm is based on [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238)
