@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "base32.js": "^0.1.0",
+    "buffer": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5"
+  }
+}

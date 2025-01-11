@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Authenticator</h1>
+            <button id="addNewBtn" class="add-button">+ Add New</button>
+        </header>
+
+        <!-- Form để thêm token mới -->
+        <div id="addTokenForm" class="add-form hidden">
+            <h2>Add New Token</h2>
+            <form id="tokenForm">
+                <div class="form-group">
+                    <label for="serviceName">Service Name:</label>
+                    <input type="text" id="serviceName" required>
+                </div>
+                <div class="form-group">
+                    <label for="secretKey">Secret Key:</label>
+                    <input type="text" id="secretKey" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="submit-btn">Add</button>
+                    <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Danh sách các token -->
+        <div id="tokenList" class="token-list">
+            <!-- Token items sẽ được thêm vào đây bằng JavaScript -->
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
