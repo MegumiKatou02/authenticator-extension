@@ -125,7 +125,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span>${serviceName}</span>
                 <button class="delete-btn">×</button>
             </div>
-            <div class="token-code">${code}</div>
+            <div class="token-content">
+                <div class="token-code">${code}</div>
+                <button class="copy-btn">Copy</button>
+            </div>
             <div class="progress-bar">
                 <div class="progress" style="width: 100%"></div>
             </div>
@@ -133,6 +136,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         tokenList.appendChild(tokenItem);
         updateToken(tokenItem, secretKey);
+
+        const copyButton = tokenItem.querySelector('.copy-btn');
+        copyButton.addEventListener('click', () => {
+            const tokenCode = tokenItem.querySelector('.token-code').textContent;
+            navigator.clipboard.writeText(tokenCode)
+                .then(() => {
+                    copyButton.textContent = '✔';
+                    copyButton.style.backgroundColor = '#4CAF50';
+
+                    setTimeout(() => {
+                        copyButton.textContent = 'Copy';
+                        copyButton.style.backgroundColor = ''; 
+                    }, 4000);
+                })
+                .catch(err => {
+                    console.error('Error copying to clipboard: ', err);
+                });
+        });
 
         saveToken(serviceName, secretKey);
     }

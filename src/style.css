@@ -92,6 +92,31 @@ input {
     cursor: pointer;
 }
 
+.token-content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.copy-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: #ddd;
+}
+
+.copy-btn:focus {
+    outline: none;
+}
+
 .token-list {
     display: flex;
     flex-direction: column;
