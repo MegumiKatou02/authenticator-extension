@@ -26,6 +26,18 @@ h1 {
     color: #333;
 }
 
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-bar input, .search-bar select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+
 .add-button {
     background-color: #4CAF50;
     color: white;
