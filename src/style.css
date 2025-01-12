@@ -1,5 +1,5 @@
 body {
-    width: 350px;
+    width: 370px;
     margin: 0;
     padding: 16px;
     font-family: Arial, sans-serif;
@@ -35,6 +35,20 @@ h1 {
 .search-bar input, .search-bar select {
     padding: 5px;
     font-size: 16px;
+}
+
+.export-button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.export-button:hover {
+    background-color: #1976D2;
 }
 
 

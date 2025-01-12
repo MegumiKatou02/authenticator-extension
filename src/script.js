@@ -86,6 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const tokenList = document.getElementById('tokenList');
     const searchInput = document.getElementById('searchInput');
     const sortSelect = document.getElementById('sortSelect');
+    // beta
+    const exportBtn = document.getElementById('exportBtn');
+    
+    if (exportBtn) {
+        exportBtn.addEventListener('click', exportTokens);
+    }
+    //
 
     searchInput.addEventListener('input', () => {
         filterTokens(searchInput.value);
@@ -264,5 +271,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         tokens.forEach(token => tokenList.appendChild(token));
+    }
+    /// beta
+    function exportTokens() {
+        chrome.storage.sync.get(['tokens'], function(result) {
+            const tokens = result.tokens || [];
+            if (tokens.length === 0) {
+                alert('No tokens to export!');
+                return;
+            }
+    
+            const backup = {
+                tokens: tokens,
+                timestamp: new Date().toISOString(),
+                version: '1.0'
+            };
+            
+            const blob = new Blob([JSON.stringify(backup, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `authenticator-backup-${new Date().toISOString().slice(0,10)}.json`;
+            a.click();
+            
+            URL.revokeObjectURL(url);
+        });
     }
 });
