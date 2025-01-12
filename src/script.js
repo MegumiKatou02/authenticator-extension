@@ -235,34 +235,34 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     `;
 
-function filterTokens(searchTerm) {
-    const tokens = document.querySelectorAll('.token-item');
-    tokens.forEach(token => {
-        const name = token.querySelector('.token-header span').textContent.toLowerCase();
-        if (name.includes(searchTerm.toLowerCase())) {
-            token.style.display = '';
-        } else {
-            token.style.display = 'none';
-        }
-    });
-}
+    function filterTokens(searchTerm) {
+        const tokens = document.querySelectorAll('.token-item');
+        tokens.forEach(token => {
+            const name = token.querySelector('.token-header span').textContent.toLowerCase();
+            if (name.includes(searchTerm.toLowerCase())) {
+                token.style.display = '';
+            } else {
+                token.style.display = 'none';
+            }
+        });
+    }
 
-function sortTokens(criteria) {
-    const tokenList = document.getElementById('tokenList');
-    const tokens = Array.from(tokenList.children);
-    
-    tokens.sort((a, b) => {
-        if (criteria === 'name') {
-            const nameA = a.querySelector('.token-header span').textContent.toLowerCase();
-            const nameB = b.querySelector('.token-header span').textContent.toLowerCase();
-            return nameA.localeCompare(nameB);
-        } else if (criteria === 'recent') {
-            const timeA = parseInt(a.dataset.timestamp);
-            const timeB = parseInt(b.dataset.timestamp);
-            return timeB - timeA;
-        }
-    });
-    
-    tokens.forEach(token => tokenList.appendChild(token));
-}
+    function sortTokens(criteria) {
+        const tokenList = document.getElementById('tokenList');
+        const tokens = Array.from(tokenList.children);
+        
+        tokens.sort((a, b) => {
+            if (criteria === 'name') {
+                const nameA = a.querySelector('.token-header span').textContent.toLowerCase();
+                const nameB = b.querySelector('.token-header span').textContent.toLowerCase();
+                return nameA.localeCompare(nameB);
+            } else if (criteria === 'recent') {
+                const timeA = parseInt(a.dataset.timestamp);
+                const timeB = parseInt(b.dataset.timestamp);
+                return timeB - timeA;
+            }
+        });
+        
+        tokens.forEach(token => tokenList.appendChild(token));
+    }
 });
