@@ -1,17 +1,17 @@
 {
-    "manifest_version": 3,
-    "name": "Simple Authenticator",
-    "version": "1.0",
-    "description": "A simple TOTP authenticator extension",
-    "icons": {
-      "48": "images/icon.png"
-    },
-    "action": {
-      "default_popup": "src/index.html",
-      "default_icon": "images/icon.png"
-    },
-    "permissions": ["storage", "activeTab"],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
-    }
+  "manifest_version": 3,
+  "name": "Simple Authenticator",
+  "version": "1.0",
+  "description": "A simple TOTP authenticator extension",
+  "icons": {
+    "48": "images/icon.png"
+  },
+  "action": {
+    "default_popup": "src/index.html",
+    "default_icon": "images/icon.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "content_security_policy": {
+      "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   }
+}
